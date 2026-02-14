@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Isa 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffd6e8, #e6d9ff);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #333;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      max-width: 420px;
+      width: 100%;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      text-align: center;
+      color: #ff4d88;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .section {
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px dashed #ddd;
+    }
+
+    .section h2 {
+      font-size: 1rem;
+      color: #6b4eff;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      background: #ff4d88;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.03);
+      background: #ff2f76;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 15px;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #444;
+      animation: fadeIn 0.6s ease;
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 0.75rem;
+      text-align: center;
+      color: #777;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Para Isa 💖</h1>
+
+    <p>
+      Esta página es para ti,  
+      mi <strong>tía favorita de internet</strong>.
+    </p>
+
+    <p>
+      Aunque solo nos conocemos por chat  
+      y algunas fotos,  
+      eso fue suficiente para crear algo bonito.
+    </p>
+
+    <div class="section">
+      <h2>Nuestra dinámica</h2>
+      <ul>
+        <li>📱 Mandarnos demasiados reels</li>
+        <li>🧓 Llamarnos “tíos” como si fuera normal</li>
+        <li>📏 Bromear con tu altura (con cariño)</li>
+        <li>💸 Tú prometiendo darme dinero algún día</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Un detalle real</h2>
+      <p>
+        Ahora hablamos menos.  
+        Hay más reels que chat…  
+        y últimamente ni eso tanto.
+      </p>
+      <p>
+        Pero aun así,  
+        pensé en ti.
+      </p>
+    </div>
+
+    <button onclick="mostrarSorpresa()">Tocar bajo tu propio riesgo</button>
+
+    <div id="sorpresa" class="hidden">
+      Este botón no da dinero 💸  
+      <br>
+      pero te debe un reel pendiente 🎞️
+    </div>
+
+    <footer>
+      Hecho con cariño, humor y cero presión 💛
+    </footer>
+  </div>
+
+  <script>
+    function mostrarSorpresa() {
+      document.getElementById("sorpresa").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
