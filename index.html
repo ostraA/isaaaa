@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Para Isa 💖</title>
+  <title>Para Isa 💌</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
@@ -18,29 +18,89 @@
       justify-content: center;
       align-items: center;
       color: #333;
+      overflow: hidden;
     }
 
-    .card {
-      background: rgba(255,255,255,0.92);
+    /* EMOJIS */
+    .emoji-rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .emoji {
+      position: absolute;
+      font-size: 1.5rem;
+      opacity: 0.35;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      from { transform: translateY(-10%); }
+      to { transform: translateY(110vh); }
+    }
+
+    /* SOBRE */
+    .envelope {
+      width: 300px;
+      height: 200px;
+      background: #ff4d88;
+      border-radius: 14px;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.4s;
+      z-index: 2;
+    }
+
+    .envelope:hover {
+      transform: scale(1.05);
+    }
+
+    .envelope::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 0;
+      height: 0;
+      border-left: 150px solid transparent;
+      border-right: 150px solid transparent;
+      border-top: 100px solid #ff2f76;
+    }
+
+    .envelope span {
+      color: white;
+      font-size: 1rem;
+      z-index: 1;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* CARTA */
+    .letter {
+      display: none;
+      background: rgba(255,255,255,0.95);
       max-width: 450px;
       width: 90%;
       padding: 30px;
       border-radius: 22px;
       box-shadow: 0 20px 45px rgba(0,0,0,0.15);
       animation: fadeIn 1s ease;
+      z-index: 2;
     }
 
     h1 {
       font-family: 'Pacifico', cursive;
       text-align: center;
       color: #ff4d88;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 1rem;
-      color: #6b4eff;
       margin-bottom: 15px;
     }
 
@@ -57,34 +117,13 @@
       border-top: 1px dashed #ddd;
     }
 
-    .emoji {
-      font-size: 1.1rem;
-    }
-
-    button {
+    .foto {
       width: 100%;
-      margin-top: 20px;
-      padding: 12px;
-      border: none;
-      border-radius: 14px;
-      background: #ff4d88;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: transform 0.2s, background 0.2s;
-    }
-
-    button:hover {
-      transform: scale(1.03);
-      background: #ff2f76;
-    }
-
-    .hidden {
-      display: none;
-      margin-top: 15px;
-      text-align: center;
-      font-size: 0.9rem;
-      animation: fadeIn 0.6s ease;
+      max-width: 220px;
+      display: block;
+      margin: 15px auto;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
     footer {
@@ -95,64 +134,66 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <div class="card">
+  <!-- EMOJIS -->
+  <div class="emoji-rain"></div>
+
+  <!-- SOBRE -->
+  <div class="envelope" onclick="abrirCarta()">
+    <span>Toca para abrir 💌</span>
+  </div>
+
+  <!-- CARTA -->
+  <div class="letter" id="carta">
     <h1>Para Isa 💖</h1>
 
-    <h2>Mi umpa lumpa favorito</h2>
+    <!-- Imagen local (opcional)
+    <img src="isa.jpg" alt="Isa" class="foto">
+    -->
+
+    <p>Mi umpa lumpa favorito.</p>
 
     <p>
       Futura inspectora de aduanas,<br>
       encargada de que no entren pitufos ilegales<br>
       y que, claramente,<br>
-      <strong>no me dará ni un peso</strong> 🥺
+      no me dará ni un peso 🥺
     </p>
 
     <div class="section">
       <p>
         Aunque solo nos conocemos por chat,<br>
         me trata como si yo la hubiera hecho chiquita…<br>
-        pero lo soporto 💅
-      </p>
-
-      <p>
-        Porque es un problema chiquito,<br>
-        JAJAJA.
+        pero lo soporto 💅<br>
+        porque es un problema chiquito JAJAJA.
       </p>
 
       <p>
         Ok ya… misa, pisa, Isa, Tisa,<br>
         conocedora del arte del teatro del engaño,<br>
-        pues obvio… porque es mujer 🤡
-      </p>
-
-      <p>
-        JASJSSJKAJD8—  
-        ya, perdón Isa.
+        pues obvio… porque es mujer 🤡<br>
+        JASJSSJKAJD8 — ya, perdón Isa.
       </p>
     </div>
 
     <div class="section">
-      <p>
-        Se supone que tengo que decir algo bonito.
-      </p>
+      <p>Se supone que tengo que decir algo bonito.</p>
 
       <p>
         Isa, espero que te esté yendo bien.<br>
-        Últimamente no hemos hablado mucho<br>
-        de nuestras vidas.
+        Últimamente no hemos hablado mucho de nuestras vidas.
       </p>
 
       <p>
         Entiendo que tienes una vida<br>
         y no puedes estar todo el tiempo<br>
-        diciendo bobadas con este <em>unemployed men</em>.
+        diciendo bobadas con este unemployed men.
       </p>
 
       <p>
@@ -167,31 +208,41 @@
         porque no quiero que te aburras.
       </p>
 
-      <p class="emoji">
+      <p>
         En resumen:<br>
         <strong>Gracias por existir</strong> 🕴️
       </p>
     </div>
 
-    <button onclick="mostrar()">Botón inútil pero obligatorio</button>
-
-    <div id="sorpresa" class="hidden">
-      Este botón no da dinero 💸<br>
-      ni un reel nuevo 🎞️<br>
-      pero sí confirma que esto fue hecho con cariño 💛
-    </div>
-
     <footer>
-      Hecho con humor, respeto (xd) y la web hecha con ayuda de karla (chat gpt gracias mi ciela) 
-      que pases bonito San Valentín pisaaa 🛌
+      Hecho con humor, respeto y cariño.
     </footer>
   </div>
 
   <script>
-    function mostrar() {
-      document.getElementById("sorpresa").style.display = "block";
+    /* ABRIR CARTA */
+    function abrirCarta() {
+      document.querySelector('.envelope').style.display = 'none';
+      document.getElementById('carta').style.display = 'block';
     }
+
+    /* EMOJIS */
+    const emojis = ["🛌", "💅", "🧐", "🕴️"];
+    const container = document.querySelector(".emoji-rain");
+
+    function crearEmoji() {
+      const emoji = document.createElement("div");
+      emoji.classList.add("emoji");
+      emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * 100 + "vw";
+      emoji.style.animationDuration = 6 + Math.random() * 6 + "s";
+      emoji.style.fontSize = 1 + Math.random() * 1.5 + "rem";
+      container.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 12000);
+    }
+
+    setInterval(crearEmoji, 500);
   </script>
 
 </body>
-                                        </html>
+</html>
